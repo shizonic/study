@@ -1,0 +1,24 @@
+<project name="SimpleStopWatchProject" 
+         default="compile">
+
+  <property name="build.dir" value="bin" />
+
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+  </target>
+
+  <target name="compile"
+          depends="init">
+    <javac srcdir="src/main/java" includeantruntime="false"
+        destdir="${build.dir}"/>
+  </target>
+
+  <target name="clean">
+    <delete dir="${build.dir}"/>
+  </target>
+
+  <target name="run" depends="compile">
+    <java classname="stopwatch.Main" classpath="${build.dir}" fork="true"/>
+  </target>
+
+</project>

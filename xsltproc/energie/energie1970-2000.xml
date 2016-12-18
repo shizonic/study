@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="xmltohtml.xsl"?>
+<energiestatistik>
+    <energieverbrauch einheit="TJ" jahr="1970">
+        <energietraeger>
+            <bezeichnung>Erdölprodukte</bezeichnung>
+            <wert>454570</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Brennstoffe</bezeichnung>
+            <wert>316510</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Treibstoffe</bezeichnung>
+            <wert>138060</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Elektrizität</bezeichnung>
+            <wert>90310</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Gas</bezeichnung>
+            <wert>7360</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Kohle und Koks</bezeichnung>
+            <wert>24440</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Hohz, Holzkohle</bezeichnung>
+            <wert>10110</wert>
+        </energietraeger>
+    </energieverbrauch>
+    <energieverbrauch jahr="1980">
+        <energietraeger>
+            <bezeichnung>Erdölprodukte</bezeichnung>
+            <wert>488300</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Brennstoffe</bezeichnung>
+            <wert>309480</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Treibstoffe</bezeichnung>
+            <wert>178820</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Elektrizität</bezeichnung>
+            <wert>126910</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Gas</bezeichnung>
+            <wert>33740</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Kohle und Koks</bezeichnung>
+            <wert>13630</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Hohz, Holzkohle</bezeichnung>
+            <wert>9670</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Fernwärme</bezeichnung>
+            <wert>7920</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Müll und Industrieadfälle</bezeichnung>
+            <wert>3700</wert>
+        </energietraeger>
+    </energieverbrauch>
+    <energieverbrauch jahr="1990">
+        <energietraeger>
+            <bezeichnung>Erdölprodukte</bezeichnung>
+            <wert>501050</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Brennstoffe</bezeichnung>
+            <wert>247830</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Treibstoffe</bezeichnung>
+            <wert>253220</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Elektrizität</bezeichnung>
+            <wert>167670</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Gas</bezeichnung>
+            <wert>63430</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Kohle und Koks</bezeichnung>
+            <wert>14360</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Hohz, Holzkohle</bezeichnung>
+            <wert>17090</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Fernwärme</bezeichnung>
+            <wert>10420</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Müll und Industrieadfälle</bezeichnung>
+            <wert>8680</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Ubrige erneuerbare Energien</bezeichnung>
+            <wert>3440</wert>
+        </energietraeger>
+    </energieverbrauch>
+    <energieverbrauch jahr="1998">
+        <energietraeger>
+            <bezeichnung>Erdölprodukte</bezeichnung>
+            <wert>518560</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Brennstoffe</bezeichnung>
+            <wert>244100</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Treibstoffe</bezeichnung>
+            <wert>274460</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Elektrizität</bezeichnung>
+            <wert>178630</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Gas</bezeichnung>
+            <wert>91370</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Kohle und Koks</bezeichnung>
+            <wert>3810</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Hohz, Holzkohle</bezeichnung>
+            <wert>20930</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Fernwärme</bezeichnung>
+            <wert>13250</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Müll und Industrieadfälle</bezeichnung>
+            <wert>14830</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Ubrige erneuerbare Energien</bezeichnung>
+            <wert>5720</wert>
+        </energietraeger>
+    </energieverbrauch>
+    <energieverbrauch jahr="1999">
+        <energietraeger>
+            <bezeichnung>Erdölprodukte</bezeichnung>
+            <wert>523800</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Brennstoffe</bezeichnung>
+            <wert>236950</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Treibstoffe</bezeichnung>
+            <wert>286860</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Elektrizität</bezeichnung>
+            <wert>184370</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Gas</bezeichnung>
+            <wert>94940</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Kohle und Koks</bezeichnung>
+            <wert>3980</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Hohz, Holzkohle</bezeichnung>
+            <wert>20590</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Fernwärme</bezeichnung>
+            <wert>13290</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Müll und Industrieadfälle</bezeichnung>
+            <wert>14530</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Ubrige erneuerbare Energien</bezeichnung>
+            <wert>6270</wert>
+        </energietraeger>
+    </energieverbrauch>
+    <energieverbrauch jahr="2000">
+        <energietraeger>
+            <bezeichnung>Erdölprodukte</bezeichnung>
+            <wert>510360</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Brennstoffe</bezeichnung>
+            <wert>217110</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Treibstoffe</bezeichnung>
+            <wert>293250</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Elektrizität</bezeichnung>
+            <wert>188540</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Gas</bezeichnung>
+            <wert>95220</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Kohle und Koks</bezeichnung>
+            <wert>5850</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Hohz, Holzkohle</bezeichnung>
+            <wert>19970</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Fernwärme</bezeichnung>
+            <wert>13280</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Müll und Industrieadfälle</bezeichnung>
+            <wert>15740</wert>
+        </energietraeger>
+        <energietraeger>
+            <bezeichnung>Ubrige erneuerbare Energien</bezeichnung>
+            <wert>6330</wert>
+        </energietraeger>
+    </energieverbrauch>
+</energiestatistik>

@@ -1,0 +1,43 @@
+<!-- ANT Build Datei -->
+<!-- $Id: build.xml 5 2005-08-19 09:48:20Z tar $ -->
+<project name="ScribbleProject" 
+         default="compile">
+
+  <property name="build.dir" value="bin" />
+  <property name="dist.dir" value="dist" />
+
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+  </target>
+
+  <target name="compile"
+          depends="init">
+    <javac srcdir="src/main/java"
+	includeantruntime="false"
+        destdir="${build.dir}"/>
+  </target>
+
+  <target name="run"
+	  depends="compile"
+	  description="Runs the program in its own JVM" >
+    <java
+     classname="drawing.Scribble"
+     classpath="${build.dir}" 
+     fork="true"/>
+  </target>
+
+  <target name="clean" depends="init">
+    <delete dir="${build.dir}" />
+  </target>
+
+  <target name="dist" depends="compile" >
+   <jar destfile="${dist.dir}/scribble.jar"
+        basedir="${build.dir}">
+     <manifest>
+       <attribute name="Main-Class" 
+		  value="drawing.Scribble"/>
+     </manifest>
+   </jar>
+  </target>
+</project>

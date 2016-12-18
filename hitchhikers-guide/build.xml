@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+
+<!-- Build file for the Hitchhikers Project  -->
+<project name="Hitchhikers Buildfile" default="package" basedir=".">
+    <!-- Standard Properties -->
+    <property name="tomcat.dir" value="/usr/local/apache-tomcat-7.0.33/"/>
+    <property name="src.dir" value="src"/>
+    <property name="build.dir" value="bin"/>
+    <property name="dist.dir" value="dist"/>
+    <property name="target" value="hitchhikers-guide.war"/>
+
+    <target name="prepare">
+      <mkdir dir="${dist.dir}"/>
+    </target>
+
+    <target name="clean">
+        <delete file="${dist.dir}/${target}"/>
+    </target>
+
+    <target name="package" depends="prepare">
+        <war warfile="${dist.dir}/${target}" 
+	     webxml="WEB-INF/web.xml">
+	  <classes dir="${build.dir}"/>
+	  <fileset dir="img"/>
+	</war>
+    </target>
+
+    <target name="deploy">
+        <copy file="${dist.dir}/${target}" todir="${tomcat.dir}/webapps"/>
+    </target>
+
+    <target name="undeploy">
+      <delete>
+	<fileset id="target" dir="${tomcat.dir}/webapps"
+		 includes="${target}"/>
+      </delete>
+    </target>
+
+</project>
