@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="default" defaultIdMethod="native" defaultPhpNamingMethod="underscore" namespace="Model">
+  <table name="City" idMethod="native" phpName="City">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Population" phpName="Population" type="INTEGER"/>
+    <column name="Longitude" phpName="Longitude" type="FLOAT"/>
+    <column name="Latitude" phpName="Latitude" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Continent" idMethod="native" phpName="Continent">
+    <column name="Name" phpName="Name" type="VARCHAR" size="20" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Area" phpName="Area" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Country" idMethod="native" phpName="Country">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" required="true"/>
+    <column name="Code" phpName="Code" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Capital" phpName="Capital" type="VARCHAR" size="35"/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35"/>
+    <column name="Area" phpName="Area" type="FLOAT"/>
+    <column name="Population" phpName="Population" type="INTEGER"/>
+    <unique name="Name">
+      <unique-column name="Name"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Desert" idMethod="native" phpName="Desert">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Area" phpName="Area" type="FLOAT"/>
+    <column name="Longitude" phpName="Longitude" type="FLOAT"/>
+    <column name="Latitude" phpName="Latitude" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Economy" idMethod="native" phpName="Economy">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="GDP" phpName="Gdp" type="FLOAT"/>
+    <column name="Agriculture" phpName="Agriculture" type="FLOAT"/>
+    <column name="Service" phpName="Service" type="FLOAT"/>
+    <column name="Industry" phpName="Industry" type="FLOAT"/>
+    <column name="Inflation" phpName="Inflation" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="EthnicGroup" idMethod="native" phpName="Ethnicgroup">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Name" phpName="Name" type="VARCHAR" size="50" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Percentage" phpName="Percentage" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Island" idMethod="native" phpName="Island">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Islands" phpName="Islands" type="VARCHAR" size="35"/>
+    <column name="Area" phpName="Area" type="FLOAT"/>
+    <column name="Height" phpName="Height" type="FLOAT"/>
+    <column name="Type" phpName="Type" type="VARCHAR" size="10"/>
+    <column name="Longitude" phpName="Longitude" type="FLOAT"/>
+    <column name="Latitude" phpName="Latitude" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Lake" idMethod="native" phpName="Lake">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Area" phpName="Area" type="FLOAT"/>
+    <column name="Depth" phpName="Depth" type="FLOAT"/>
+    <column name="Altitude" phpName="Altitude" type="FLOAT"/>
+    <column name="Type" phpName="Type" type="VARCHAR" size="10"/>
+    <column name="River" phpName="River" type="VARCHAR" size="35"/>
+    <column name="Longitude" phpName="Longitude" type="FLOAT"/>
+    <column name="Latitude" phpName="Latitude" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Language" idMethod="native" phpName="Language">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Name" phpName="Name" type="VARCHAR" size="50" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Percentage" phpName="Percentage" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Mountain" idMethod="native" phpName="Mountain">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Mountains" phpName="Mountains" type="VARCHAR" size="35"/>
+    <column name="Height" phpName="Height" type="FLOAT"/>
+    <column name="Type" phpName="Type" type="VARCHAR" size="10"/>
+    <column name="Longitude" phpName="Longitude" type="FLOAT"/>
+    <column name="Latitude" phpName="Latitude" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="MountainOnIsland" idMethod="native" phpName="Mountainonisland">
+    <column name="Mountain" phpName="Mountain" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Island" phpName="Island" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Organization" idMethod="native" phpName="Organization">
+    <column name="Abbreviation" phpName="Abbreviation" type="VARCHAR" size="12" primaryKey="true" required="true"/>
+    <column name="Name" phpName="Name" type="VARCHAR" size="80" required="true"/>
+    <column name="City" phpName="City" type="VARCHAR" size="35"/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4"/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35"/>
+    <column name="Established" phpName="Established" type="DATE"/>
+    <unique name="OrgNameUnique">
+      <unique-column name="Name"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Politics" idMethod="native" phpName="Politics">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Independence" phpName="Independence" type="DATE"/>
+    <column name="Dependent" phpName="Dependent" type="VARCHAR" size="4"/>
+    <column name="Government" phpName="Government" type="VARCHAR" size="120"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Population" idMethod="native" phpName="Population">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Population_Growth" phpName="PopulationGrowth" type="FLOAT"/>
+    <column name="Infant_Mortality" phpName="InfantMortality" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Province" idMethod="native" phpName="Province">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true"/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true"/>
+    <column name="Population" phpName="Population" type="INTEGER"/>
+    <column name="Area" phpName="Area" type="FLOAT"/>
+    <column name="Capital" phpName="Capital" type="VARCHAR" size="35"/>
+    <column name="CapProv" phpName="Capprov" type="VARCHAR" size="35"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Religion" idMethod="native" phpName="Religion">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Name" phpName="Name" type="VARCHAR" size="50" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Percentage" phpName="Percentage" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="River" idMethod="native" phpName="River">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="River" phpName="River" type="VARCHAR" size="35"/>
+    <column name="Lake" phpName="Lake" type="VARCHAR" size="35"/>
+    <column name="Sea" phpName="Sea" type="VARCHAR" size="35"/>
+    <column name="Length" phpName="Length" type="FLOAT"/>
+    <column name="SourceLongitude" phpName="Sourcelongitude" type="FLOAT"/>
+    <column name="SourceLatitude" phpName="Sourcelatitude" type="FLOAT"/>
+    <column name="Mountains" phpName="Mountains" type="VARCHAR" size="35"/>
+    <column name="SourceAltitude" phpName="Sourcealtitude" type="FLOAT"/>
+    <column name="EstuaryLongitude" phpName="Estuarylongitude" type="FLOAT"/>
+    <column name="EstuaryLatitude" phpName="Estuarylatitude" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="Sea" idMethod="native" phpName="Sea">
+    <column name="Name" phpName="Name" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Depth" phpName="Depth" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="borders" idMethod="native" phpName="Borders">
+    <column name="Country1" phpName="Country1" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country2" phpName="Country2" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Length" phpName="Length" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="encompasses" idMethod="native" phpName="Encompasses">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true"/>
+    <column name="Continent" phpName="Continent" type="VARCHAR" size="20" primaryKey="true" required="true"/>
+    <column name="Percentage" phpName="Percentage" type="FLOAT"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_Desert" idMethod="native" phpName="GeoDesert">
+    <column name="Desert" phpName="Desert" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_Estuary" idMethod="native" phpName="GeoEstuary">
+    <column name="River" phpName="River" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_Island" idMethod="native" phpName="GeoIsland">
+    <column name="Island" phpName="Island" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_Lake" idMethod="native" phpName="GeoLake">
+    <column name="Lake" phpName="Lake" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_Mountain" idMethod="native" phpName="GeoMountain">
+    <column name="Mountain" phpName="Mountain" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_River" idMethod="native" phpName="GeoRiver">
+    <column name="River" phpName="River" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_Sea" idMethod="native" phpName="GeoSea">
+    <column name="Sea" phpName="Sea" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="geo_Source" idMethod="native" phpName="GeoSource">
+    <column name="River" phpName="River" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="isMember" idMethod="native" phpName="Ismember">
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Organization" phpName="Organization" type="VARCHAR" size="12" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Type" phpName="Type" type="VARCHAR" size="35" defaultValue="member"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="islandIn" idMethod="native" phpName="Islandin">
+    <column name="Island" phpName="Island" type="VARCHAR" size="35"/>
+    <column name="Sea" phpName="Sea" type="VARCHAR" size="35"/>
+    <column name="Lake" phpName="Lake" type="VARCHAR" size="35"/>
+    <column name="River" phpName="River" type="VARCHAR" size="35"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="located" idMethod="native" phpName="Located">
+    <column name="City" phpName="City" type="VARCHAR" size="35"/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35"/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4"/>
+    <column name="River" phpName="River" type="VARCHAR" size="35"/>
+    <column name="Lake" phpName="Lake" type="VARCHAR" size="35"/>
+    <column name="Sea" phpName="Sea" type="VARCHAR" size="35"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="locatedOn" idMethod="native" phpName="Locatedon">
+    <column name="City" phpName="City" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Province" phpName="Province" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Country" phpName="Country" type="VARCHAR" size="4" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Island" phpName="Island" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="mergesWith" idMethod="native" phpName="Mergeswith">
+    <column name="Sea1" phpName="Sea1" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <column name="Sea2" phpName="Sea2" type="VARCHAR" size="35" primaryKey="true" required="true" defaultValue=""/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>
