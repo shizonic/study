@@ -1,10 +1,10 @@
 package mondial;
 
 import java.sql.*;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
-public class Countries {
+public class CountryTest {
 
     public static void main(String[] args) {
         try {
@@ -14,22 +14,33 @@ public class Countries {
             return;
         }
 
-        Connection con;
-        PreparedStatement stmt;
-        ResultSet rSet;
-
         try {
+
             String url = "jdbc:mysql://localhost:3306/Mondial";
-            con = DriverManager.getConnection(url, "stud", "stud");
+            Connection con = DriverManager.getConnection(url, "root", "root");
+
+            List<String> countryCodes = Arrays.asList("CH", "D", "S", "GB", "US", "USA");
+
             CountryRepository countryRepository = new CountryJdbcRepository(con);
-            for(Country c: countryRepository.findCountriesLike("S%")) {
-                System.out.println(c.getCode() + "\t" + c.getName());
+
+            for (String code: countryCodes) {
+                Country country = countryRepository.findCountryByCode(code);
+                if (null == country) {
+                    System.out.println("Country for code '" + code + "' not found.");
+                } else {
+                    System.out.println(country.getCode() + "\t" + country.getName());
+                }
             }
+
             con.close();
+
         } catch (SQLException e) {
+
             System.out.println("Fehler bei Tabellenabfrage" + e);
             return;
+
         }
+
     }
 }	
 

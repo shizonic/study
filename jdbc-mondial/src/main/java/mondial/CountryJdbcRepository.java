@@ -14,6 +14,34 @@ public class CountryJdbcRepository implements CountryRepository {
         this.con = con;
     }
 
+    public Country findCountryByCode(String code) {
+        PreparedStatement stmt;
+        try {
+
+            stmt = con.prepareStatement(
+                    "SELECT code, name FROM Country WHERE code = ?");
+            stmt.setString(1, code);
+
+            ResultSet rSet = stmt.executeQuery();
+            Country country = null;
+
+            if (rSet.next()) {
+                country = new Country(
+                    rSet.getString(1),
+                    rSet.getString(2)
+                );
+                //System.out.println(rSet.getString(1) + "\t" + rSet.getString(2));
+            }
+
+            stmt.close();
+            return country;
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
     @Override
     public Country[] findCountriesLike(String name) {
         PreparedStatement stmt;
