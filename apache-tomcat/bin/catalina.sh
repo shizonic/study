@@ -100,6 +100,8 @@
 #                   case the default is "true"
 # -----------------------------------------------------------------------------
 
+export JAVA_OPTS=-Dcom.sun.management.jmxremote
+
 # OS specific support.  $var _must_ be set to either true or false.
 cygwin=false
 darwin=false
