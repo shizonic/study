@@ -4,4 +4,5 @@ echosockets.iml
 target
 vendor/
 apache-tomcat/logs/
+apache-tomcat/work/
 
