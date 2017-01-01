@@ -3,3 +3,5 @@
 echosockets.iml
 target
 vendor/
+apache-tomcat/logs/
+
