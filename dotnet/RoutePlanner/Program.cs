@@ -29,6 +29,13 @@ namespace RoutePlanner
             LinkRepositoryFile linkRepository = new LinkRepositoryFile("Resources/routes.txt", cityRepository);
             Console.WriteLine("Anzahl Verbindungen " + linkRepository.Count);
 
+            RouteManager rmgr = new RouteManager(cityRepository, linkRepository);
+            Link[] route = rmgr.FindShortestRouteBetween("Basel", "Berlin", Link.TransportModeEnum.Rail);
+            foreach(Link l in route)
+            {
+                Console.WriteLine(l);
+            }
+            
         }
 
     }
