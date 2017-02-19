@@ -1,4 +1,6 @@
-﻿using System;
+﻿// See: https://www.tutorialspoint.com/csharp/csharp_delegates.htm
+
+using System;
 
 delegate void Notifier(string sender);
 delegate int Math(int value);
