@@ -8,6 +8,10 @@ namespace RoutePlanner.Core
         ICityRepository cityRepository;
         ILinkRepository linkRepository;
 
+        Delegate 
+
+        Notifier event notifiers;
+
         public RouteManager(
             ICityRepository cityRepository, 
             ILinkRepository linkRepository)
@@ -25,6 +29,9 @@ namespace RoutePlanner.Core
         {
             City source = cityRepository.FindByName(fromName);
             City target = cityRepository.FindByName(toName);
+            if (notifiers != null) {
+                notifiers(source, target);
+            }
             List<City> cities = cityRepository.FindCitiesBetween(
                 source, target);
             if (cities.Count < 1)

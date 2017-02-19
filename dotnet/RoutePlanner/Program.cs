@@ -5,6 +5,24 @@ namespace RoutePlanner
 {
     class Program
     {
+        static void KeepMeInformed(City from, City to)
+        {
+            if (from != null && to != null) {
+                Console.WriteLine("Search {0} -> {1}", from.Name, to.Name);
+            } else {
+                Console.WriteLine("Going to nowhere?");
+            }
+        }
+
+        static void KeepMeInformedToo(City from, City to)
+        {
+            if (from != null && to != null) {
+                Console.WriteLine("Search {0} => {1}", from.Name, to.Name);
+            } else {
+                Console.WriteLine("Yes, going to nowhere.");
+            }
+        }
+
         static void Main(string[] args)
         {
             WayPoint pratteln = new WayPoint("Pratteln", 47.5167, 7.6833);
@@ -30,6 +48,14 @@ namespace RoutePlanner
             Console.WriteLine("Anzahl Verbindungen " + linkRepository.Count);
 
             RouteManager rmgr = new RouteManager(cityRepository, linkRepository);
+
+            // Delegates...
+            rmgr.notifiers += KeepMeInformed; // statisch
+            rmgr.notifiers += KeepMeInformedToo; // statisch
+
+            // Nicht möglich, siehe RouteManager.cs Delegates
+            // rmgr.notifiers(null, null);
+
             Link[] route = rmgr.FindShortestRouteBetween("Basel", "Berlin", Link.TransportModeEnum.Rail);
             foreach(Link l in route)
             {
