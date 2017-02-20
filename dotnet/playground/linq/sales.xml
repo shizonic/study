@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE sales [
+  <!ELEMENT sales ( products, record )> <!--sales information-->
+  <!ELEMENT products ( product+ )>         <!--product record-->
+  <!ELEMENT product ( #PCDATA )>      <!--product information-->
+  <!ATTLIST product id ID #REQUIRED>
+  <!ELEMENT record ( cust+ )>                <!--sales record-->
+  <!ELEMENT cust ( prodsale+ )>     <!--customer sales record-->
+  <!ATTLIST cust num CDATA #REQUIRED>     <!--customer number-->
+  <!ELEMENT prodsale ( #PCDATA )>     <!--product sale record-->
+  <!ATTLIST prodsale idref IDREF #REQUIRED>
+]>
+<sales>
+  <products>
+    <product id="p1"> Packing Boxes</product>
+    <product id="p2"> Packing Tape</product>
+    <record>
+      <cust num="C1001">
+        <prodsale idref="p1">100 </prodsale>
+        <prodsale idref="p2">200 </prodsale>
+      </cust>
+      <cust num="C1002">
+        <prodsale idref="p2">50 </prodsale>
+      </cust>
+      <cust num="C1003">
+        <prodsale idref="p1">75 </prodsale>
+        <prodsale idref="p2">15 </prodsale>
+      </cust>
+      <cust num="C1004">
+        <prodsale idref="p1">75 </prodsale>
+        <prodsale idref="p2">115 </prodsale>
+      </cust>
+    </record>
+  </products>
+</sales>

@@ -4,8 +4,60 @@ using System.Collections.Generic;
 
 namespace ConsoleApplication
 {
+    public class Statistics
+    {
+        private List<double> numbers;
+
+        public Statistics()
+        {
+            numbers = new List<double>();
+        }
+
+        public int Add(double number)
+        {
+            numbers.Add(number);
+            return numbers.Count;
+        }
+
+        public double Avg()
+        {
+            double sum = 0;
+            foreach (double number in numbers) {
+                sum += number;
+            }
+            return sum / numbers.Count;
+        }
+
+        public List<double> FindBetween_Delegate(double lower, double upper)
+        {
+            // "delegate" funktioniert hier wie eine anonyme Funktion
+            return numbers.FindAll(
+                delegate (double n) {
+                    return n > lower && n < upper;
+                }
+            );
+        }
+
+        public List<double> FindBetween_Lambda(double lower, double upper) 
+        {
+            return numbers.FindAll(
+                n => n > lower && n < upper
+            );
+        }
+
+    }
+
     public class Program
     {
+        public static void PrintList(List<double> list, string message)
+        {
+            Console.Write(message);
+            foreach (double item in list) {
+                Console.Write(item + " ");
+            }
+            Console.Write("\n");
+        }
+
         public static void Main(string[] args)
         {
             // "Generische" Liste
@@ -84,7 +136,24 @@ namespace ConsoleApplication
             }
             Console.Write("\n");
 
+            // Numbers
+            Console.WriteLine("\nNumbers");
 
+            Statistics stats = new Statistics();
+            stats.Add(10.6);
+            stats.Add(20.9);
+            stats.Add(30.3);
+            stats.Add(40.5);
+            stats.Add(50.2);
+            double avg = stats.Avg();
+            Console.WriteLine("Durchschnitt = " + avg);
+
+            List<double> found;
+            found = stats.FindBetween_Delegate(20.95, 40.6);
+            PrintList(found, "Gefiltert mit Delegate: ");
+
+            found = stats.FindBetween_Lambda(20.95, 40.6);
+            PrintList(found, "Gefilter mit Lambda: ");
 
         }
     }
