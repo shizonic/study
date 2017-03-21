@@ -14,7 +14,7 @@ public class StudentJpaRepository implements StudentRepository {
     }
 
     public void setEntityManager(EntityManager em) {
-        this.entityManager = entityManager;
+        this.entityManager = em;
     }
 
     @Override
