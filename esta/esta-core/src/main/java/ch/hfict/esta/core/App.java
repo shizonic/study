@@ -15,7 +15,6 @@ public class App
     public static void main( String[] args )
     {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("ch.hfict.esta");
-        /*
         StudentJpaRepository studentRepository = new StudentJpaRepository();
         studentRepository.setEntityManager(emf.createEntityManager());
 
@@ -26,6 +25,5 @@ public class App
         student = studentRepository.save(student);
 
         System.out.println( "Student " + student.getId() + " saved.");
-        */
     }
 }
