@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+      
+  web:
+    container_name: "php56"
+    build: "./php-7.1/Dockerfile"
+    image: "php:7.1-apache"
+    ports:
+      - "80:80"  
+    volumes:
+      - "/Users/thomas/WebServer/www:/var/www/html"

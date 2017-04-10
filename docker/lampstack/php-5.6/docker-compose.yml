@@ -1,0 +1,21 @@
+version: "2"
+
+services:
+  db:
+    container_name: "mysql57.local"
+    image: "mysql:5.7"
+    ports:
+      - "6603:3306"
+    volumes:
+      - "/Users/thomas/storage/docker/mysql57-datadir:/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: "root"
+  
+  web:
+    container_name: "php56-apache.local"
+    build: "php-apache"
+    image: "php:5.6-apache"
+    ports:
+      - "80:80"        
+    volumes:
+      - "/Users/thomas/WebServer/www:/var/www/html"
