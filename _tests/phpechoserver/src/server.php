@@ -1,6 +1,7 @@
 #!/usr/local/bin/php -q
 <?php
 error_reporting (E_ALL);
+ini_set('display_errors', 1);
 
 /* Das Skript wartet auf hereinkommende Verbindungsanforderungen. */
 set_time_limit (0);
@@ -9,7 +10,10 @@ set_time_limit (0);
  * was gesendet wurde. */
 ob_implicit_flush ();
 
-require_once ('config/main.php');
+echo "Starte PHP-Testserver.\n";
+
+$address = 'server';
+$port = '10000';
 
 if (($sock = socket_create(AF_INET, SOCK_STREAM, SOL_TCP)) === false) {
     echo "socket_create() fehlgeschlagen: Grund: " . socket_strerror(socket_last_error()) . "\n";

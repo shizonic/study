@@ -2,9 +2,10 @@
 <?php
 error_reporting(E_ALL);
 
-echo "Willkommen auf dem PHP-Testclient.\n";
+echo "Starte PHP-Testclient.\n";
 
-require_once ('config/main.php');
+$address = 'server';
+$port = '10000';
 
 /* Einen TCP/IP-Socket erzeugen. */
 $socket = socket_create(AF_INET, SOCK_STREAM, SOL_TCP);

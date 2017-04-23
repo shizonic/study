@@ -1,0 +1,15 @@
+version: "2"
+
+services:
+    server:
+        build: .
+        image: phpcli/server
+        command: php /app/src/server.php
+        volumes:
+            - ./src:/app/src 
+    client:
+        build: .
+        image: phpcli/client
+        command: php /app/src/client.php
+        volumes:
+            - ./src:/app/src

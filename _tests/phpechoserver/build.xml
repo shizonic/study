@@ -1,0 +1,15 @@
+<project name="SimpleProject" default="docker-compose">
+	<target name="docker-compose" description="Docker Compose">	
+		<exec executable="docker-compose" failonerror="true">
+			<arg value="--file"/>
+			<arg value="${basedir}/docker-compose.yml"/>
+			<arg value="up"/>
+			<arg value="--no-color"/>
+		</exec>
+		<exec executable="docker-compose" failonerror="true">
+			<arg value="--file"/>
+			<arg value="${basedir}/docker-compose.yml"/>
+			<arg value="down"/>
+		</exec>		
+	</target>	
+</project>
