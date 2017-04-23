@@ -1,0 +1,12 @@
+cli:
+    image: php:5.6-cli
+    #command: php /app/composer.phar install
+    links:
+        - jenkinsdb
+    volumes:
+        - ../..:/app
+jenkinsdb:
+    image: mysql:latest
+    environment:
+        MYSQL_DATABASE: jenkins
+        MYSQL_ROOT_PASSWORD: jenkins

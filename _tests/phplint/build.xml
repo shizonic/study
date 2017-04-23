@@ -1,0 +1,58 @@
+<project name="SimpleProject" default="lint">
+	<target name="lint" description="Perform syntax check of sourcecode files">
+		<exec executable="docker" failonerror="true">
+			<arg value="run"/>
+			<arg value="--rm"/>
+			<arg value="-v"/>
+			<arg value="${basedir}:${basedir}"/>
+			<arg value="php:5.4-cli"/>
+			<arg value="/bin/bash"/>
+			<arg value="-c"/>
+			<arg value="find -L ${basedir}/src -name '*.php' -print0 | xargs -0 -n 1 -P 4 php -l"/>
+		</exec>
+	</target>
+	<target name="phpmd-ci" description="Mess detection">
+		<exec executable="docker">
+			<arg value="run"/>
+			<arg value="--rm"/>
+			<arg value="-v"/>
+			<arg value="${basedir}:${basedir}"/>
+			<arg value="php:5.6-cli"/>
+			<arg value="${basedir}/bin/phpmd"/>
+			<arg path="${basedir}/src" />
+			<arg value="xml" />
+			<arg value="${basedir}/vendor/evolution7/qa-tools/rulesets/phpmd/symfony2.xml" />
+			<arg value="--reportfile" />
+			<arg value="${basedir}/build/logs/pmd.xml" />
+			<arg value="--exclude" />
+			<arg value="DataFixtures,Resources,Tests,Migration" />
+		</exec>
+	</target>	
+	<target name="docker-compose-1" description="Docker Compose">	
+		<exec executable="docker-compose" failonerror="true">
+			<arg value="--file"/>
+			<arg value="${basedir}/config/ci/docker-compose-1.yml"/>
+			<arg value="up"/>
+			<arg value="--no-color"/>
+		</exec>
+		<exec executable="docker-compose" failonerror="true">
+			<arg value="--file"/>
+			<arg value="${basedir}/config/ci/docker-compose-1.yml"/>
+			<arg value="rm"/>
+			<arg value="-f"/>			
+		</exec>		
+	</target>	
+	<target name="docker-compose-2" description="Docker Compose">	
+		<exec executable="docker-compose" failonerror="true">
+			<arg value="--file"/>
+			<arg value="${basedir}/config/ci/docker-compose-2.yml"/>
+			<arg value="up"/>
+			<arg value="--no-color"/>
+		</exec>
+		<exec executable="docker-compose" failonerror="true">
+			<arg value="--file"/>
+			<arg value="${basedir}/config/ci/docker-compose-2.yml"/>
+			<arg value="rm"/>
+		</exec>
+	</target>
+</project>
