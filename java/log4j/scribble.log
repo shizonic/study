@@ -1,0 +1,4 @@
+15   [main] INFO  drawing.Scribble   - Connected to database
+17   [main] WARN  drawing.Scribble   - Empty input
+18   [main] ERROR drawing.Scribble   - Permission denied
+18   [main] FATAL drawing.Scribble   - Exhausted memory
