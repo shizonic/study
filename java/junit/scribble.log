@@ -1,0 +1,6 @@
+2017-06-05 10:36:06,556 INFO [main] d.Test [Test.java:11] Entering application
+2017-06-05 10:36:06,566 WARN [main] d.Scribble [Scribble.java:14] Empty input
+2017-06-05 10:36:06,567 ERROR [main] d.Scribble [Scribble.java:15] Permission denied (error code 2)
+2017-06-05 10:36:06,570 TRACE [main] d.Test [Test.java:13] Object class Test created
+2017-06-05 10:36:06,570 TRACE [main] d.Test [Test.java:15] Object class Test deleted
+2017-06-05 10:36:06,573 INFO [main] d.Test [Test.java:16] Exiting application
