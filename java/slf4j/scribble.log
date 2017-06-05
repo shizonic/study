@@ -1,0 +1,3 @@
+4    [main] INFO  drawing.Scribble   - Connected to database
+6    [main] WARN  drawing.Scribble   - Empty input
+9    [main] ERROR drawing.Scribble   - Permission denied (error code 2)
