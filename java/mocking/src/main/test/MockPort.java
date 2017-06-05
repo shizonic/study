@@ -45,4 +45,14 @@ public class MockPort extends PrintStream implements Port {
             Assert.fail("Port not closed");
         }
     }
+
+    public void println(String s) {
+        if (!outIterator.hasNext()) {
+            Assert.fail("overrun");
+        }
+        if (!s.equals(outIterator.next())) {
+            Assert.fail("changed sequence");
+        }
+        super.println(s);
+    }
 }
