@@ -1,7 +1,10 @@
-import org.junit.*;
-import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.Before;
+import org.junit.BeforeClass;
+import org.junit.Assert;
+import org.junit.Test;
 
 public class MathTest {
 
@@ -34,25 +37,25 @@ public class MathTest {
     @Test
     public void div() throws Exception {
         System.out.print("Test div");
-        assertEquals(0.6666666666666666, math.div(), 0.001);
+        Assert.assertEquals(0.6666666666666666, math.div(), 0.001);
     }
 
     @Test
     public void sub() throws Exception {
         System.out.print("Test sub");
-        assertEquals(-11, math.sub(),0.001);
+        Assert.assertEquals(-11, math.sub(),0.001);
     }
 
     @Test
     public void mul() throws Exception {
         System.out.print("Test mul");
-        assertEquals(726, math.mul(),0.001);
+        Assert.assertEquals(726, math.mul(),0.001);
     }
 
     @Test
     public void sum() throws Exception {
         System.out.print("Test sum");
-        assertEquals(55, math.sum(), 0.001);
+        Assert.assertEquals(55, math.sum(), 0.001);
     }
 
 }
