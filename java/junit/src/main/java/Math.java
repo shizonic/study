@@ -14,6 +14,9 @@ public class Math {
     }
 
     public double div() {
+        if (b == 0) {
+            throw new ArithmeticException();
+        }
         return a / b;
     }
 

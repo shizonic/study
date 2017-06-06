@@ -40,6 +40,13 @@ public class MathTest {
         Assert.assertEquals(0.6666666666666666, math.div(), 0.001);
     }
 
+    @Test(expected = ArithmeticException.class)
+    public void divByZero() {
+        System.out.print("Test div by zero");
+        Math math = new Math(10, 0);
+        math.div();
+    }
+
     @Test
     public void sub() throws Exception {
         System.out.print("Test sub");
